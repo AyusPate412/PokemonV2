@@ -25,14 +25,13 @@ namespace Pokemon
         //Sound properties
         System.Windows.Media.MediaPlayer normalAtkSound;
         System.Windows.Media.MediaPlayer chestCollectSound;
-        System.Windows.Media.MediaPlayer grassStepSound =new System.Windows.Media.MediaPlayer();
+        System.Windows.Media.MediaPlayer grassStepSound = new System.Windows.Media.MediaPlayer();
         System.Windows.Media.MediaPlayer healSound;
         System.Windows.Media.MediaPlayer levelUpSound;
         System.Windows.Media.MediaPlayer openDoorSound;
         System.Windows.Media.MediaPlayer spAtkSound;
         System.Windows.Media.MediaPlayer treeHitSound;
         System.Windows.Media.MediaPlayer battleMusic;
-
 
         //Player
         Rectangle player1 = new Rectangle(400, 250, 35, 40);
@@ -63,7 +62,7 @@ namespace Pokemon
         List<Rectangle> chestList = new List<Rectangle>();
 
         //Money Lists
-        int[] moneyRequired = { 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 0 };
+        int[] moneyRequired = { 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200,0 };
         int i = 0;
 
         //trees Images
@@ -172,7 +171,6 @@ namespace Pokemon
         {
             InitializeComponent();
             //Menu Screen
-            InitializeMenuScreen();
             InitializeGameScreen();
             battleBossHealthBar = new Rectangle(350, 100, bossHealth / 5, 20);
             battlePokemonHealthBar = new Rectangle(200, 300, pokemonHealth / 5, 20);
@@ -407,10 +405,9 @@ namespace Pokemon
             {
                 for (int i = 0; i < treesHitBoxList.Count; i++)
                 {
-                    playTreeHitSound();
                     if (player1.IntersectsWith(treesHitBoxList[i]))
                     {
-                        //playTreeHitSound();
+                        playTreeHitSound();
                         if (wPressed == true)
                         {
                             player1.Y += player1Speed;
@@ -505,12 +502,17 @@ namespace Pokemon
         //reset the player's stats when the game is replay
         public void InitializeMenuScreen()
         {
+            gameState = "Start Screen";
             pokemonLv = 0;
             playerMoney = 0;
             exitButton.Visible = true;
             playAgainLabel.Visible = false;
             startButton.Visible = true;
-            battlePokemon.Visible = false;            
+            battlePokemon.Visible = false;
+            bossHealthLabel.Visible = false;
+            pokemonHealthLabel.Visible = false;
+            pTurn.Visible = false;
+            resultBattleLabel.Visible = false;
             this.BackgroundImage = Properties.Resources.forest;
         }
 
@@ -539,6 +541,7 @@ namespace Pokemon
         //hide all the buttons and label when player is in the main game screen
         public void InitializeMainScreen()
         {
+
             resultBattleLabel.Visible = false;
             attackButton.Visible = false;
             attackButton.Enabled = false;
@@ -968,10 +971,10 @@ namespace Pokemon
                     pokemonHeal = 970;
                     break;
                 case 21:
-                    pokemonHealth = 728;
-                    pokemonAtk = 785;
-                    pokemonSpAtk = 909;
-                    pokemonHeal = 970;
+                    pokemonHealth = 1000;
+                    pokemonAtk = 850;
+                    pokemonSpAtk = 1000;
+                    pokemonHeal = 1000;
                     break;
             }
     
@@ -991,6 +994,7 @@ namespace Pokemon
                     pokemonLvChecking();
                     playerMoney -= moneyRequired[i];
                     battlePokemonHealthBar = new Rectangle(200, 300, pokemonHealth / 5, 20);
+                    playLevelUpSound();
                     i++;
                 }
                 else if (pokemonLv == 21)
@@ -1071,7 +1075,7 @@ namespace Pokemon
                     battleBossHealthBar = new Rectangle(bossCurrentHealthX, 100, (bossHealth / 5), 20);
                     bossHealth = 2000;
                     bossAtk = 800;
-                    bossSpAtk = 1200;
+                    bossSpAtk = 1100;
                     bossHeal = 600;
                     break;
             }
@@ -1247,7 +1251,7 @@ namespace Pokemon
             playAgainLabel.Visible = true;
         }
 
-        //w
+        //win condition
         private void checkWinCondition()
         {
             if (gameState == "Battle Screen" && pokemonHealth <= 0)
@@ -1361,7 +1365,6 @@ namespace Pokemon
                 e.Graphics.DrawString($"${playerMoney}", drawFont, blackBrush, 670, 50);
                 e.Graphics.DrawString($"{actualPokemon}", drawFont, blackBrush, 120, 50);
 
-                
                 if (pokemonLv < 21)
                 {
                     e.Graphics.DrawString($"${moneyRequired[i]}", drawFont, blackBrush, 550, 283);

@@ -70,7 +70,7 @@
             // 
             this.playerNameInput.Location = new System.Drawing.Point(86, 386);
             this.playerNameInput.Name = "playerNameInput";
-            this.playerNameInput.Size = new System.Drawing.Size(106, 20);
+            this.playerNameInput.Size = new System.Drawing.Size(106, 22);
             this.playerNameInput.TabIndex = 37;
             // 
             // characterLabel
@@ -124,7 +124,7 @@
             this.pokemonHealthLabel.BackColor = System.Drawing.Color.Transparent;
             this.pokemonHealthLabel.Location = new System.Drawing.Point(224, 372);
             this.pokemonHealthLabel.Name = "pokemonHealthLabel";
-            this.pokemonHealthLabel.Size = new System.Drawing.Size(0, 13);
+            this.pokemonHealthLabel.Size = new System.Drawing.Size(0, 16);
             this.pokemonHealthLabel.TabIndex = 47;
             // 
             // bossHealthLabel
@@ -133,7 +133,7 @@
             this.bossHealthLabel.BackColor = System.Drawing.Color.Transparent;
             this.bossHealthLabel.Location = new System.Drawing.Point(502, 82);
             this.bossHealthLabel.Name = "bossHealthLabel";
-            this.bossHealthLabel.Size = new System.Drawing.Size(0, 13);
+            this.bossHealthLabel.Size = new System.Drawing.Size(0, 16);
             this.bossHealthLabel.TabIndex = 48;
             // 
             // resultBattleLabel
@@ -141,7 +141,7 @@
             this.resultBattleLabel.AutoSize = true;
             this.resultBattleLabel.BackColor = System.Drawing.Color.Transparent;
             this.resultBattleLabel.Font = new System.Drawing.Font("Palatino Linotype", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resultBattleLabel.Location = new System.Drawing.Point(383, 223);
+            this.resultBattleLabel.Location = new System.Drawing.Point(428, 154);
             this.resultBattleLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.resultBattleLabel.Name = "resultBattleLabel";
             this.resultBattleLabel.Size = new System.Drawing.Size(0, 26);
@@ -175,7 +175,7 @@
             // 
             this.spAttackButton.Image = ((System.Drawing.Image)(resources.GetObject("spAttackButton.Image")));
             this.spAttackButton.Location = new System.Drawing.Point(698, 342);
-            this.spAttackButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.spAttackButton.Margin = new System.Windows.Forms.Padding(2);
             this.spAttackButton.Name = "spAttackButton";
             this.spAttackButton.Size = new System.Drawing.Size(142, 73);
             this.spAttackButton.TabIndex = 44;
@@ -186,7 +186,7 @@
             // 
             this.healButton.Image = ((System.Drawing.Image)(resources.GetObject("healButton.Image")));
             this.healButton.Location = new System.Drawing.Point(544, 342);
-            this.healButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.healButton.Margin = new System.Windows.Forms.Padding(2);
             this.healButton.Name = "healButton";
             this.healButton.Size = new System.Drawing.Size(150, 73);
             this.healButton.TabIndex = 43;
@@ -197,7 +197,7 @@
             // 
             this.attackButton.Image = ((System.Drawing.Image)(resources.GetObject("attackButton.Image")));
             this.attackButton.Location = new System.Drawing.Point(399, 342);
-            this.attackButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.attackButton.Margin = new System.Windows.Forms.Padding(2);
             this.attackButton.Name = "attackButton";
             this.attackButton.Size = new System.Drawing.Size(141, 73);
             this.attackButton.TabIndex = 42;
@@ -364,7 +364,7 @@
             this.Controls.Add(this.titleLabel);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.RightToLeftLayout = true;
             this.Text = "l";
